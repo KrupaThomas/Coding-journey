@@ -26,6 +26,16 @@ class cuboid: public rectangle
             cout<<"Height : "<<height<<endl;
         }
 
+        void area()
+        {
+            cout<<"Area of cuboid is : "<<2*((length*breadth)+ (length*height)+(breadth*height))<<endl;
+        }
+
+        void volume()
+        {
+            cout<<"Volume of cuboid is : "<<length*breadth*height<<endl;
+        }
+
 };
 
 int main()
@@ -35,6 +45,9 @@ int main()
 
     ace.show();
     ace.display();
+
+    ace.area();
+    ace.volume();
 
 
     return 0;
