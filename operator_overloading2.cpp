@@ -23,6 +23,16 @@ public:
         return weight++;
     }
 
+    int operator --()
+    {
+       return --weight;
+    
+    }
+    int operator -- (int)
+    {
+        return weight--;
+    }
+
     void print()
     {
         cout<<"The weight is "<<weight<<endl;
@@ -36,5 +46,9 @@ int main()
     ++obj;
     obj.print();
     obj++;
+    obj.print();
+    --obj;
+    obj.print();
+    obj--;
     obj.print();
 }
