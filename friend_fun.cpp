@@ -7,6 +7,7 @@ class base1
 {
     private:
     int age;
+    
 
     public:
     base1(int x)

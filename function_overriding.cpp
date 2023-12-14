@@ -28,7 +28,6 @@ int main()
     child d;
     c.Msg();
     d.Msg();
-   
 
     return 0;   
 

@@ -20,7 +20,7 @@ class child: public parent
 {
 
     public:
-        /*child()
+        child()
         {
             cout<<"Default child class"<<endl;
         }
@@ -28,9 +28,9 @@ class child: public parent
         child(int c)
         {
             cout<<"parameterised child class"<<endl;
-        }*/
+        }
 
-        child():parent()
+        /*child():parent()
         {
             cout<<"Default child class"<<endl;
         }
@@ -38,7 +38,7 @@ class child: public parent
         child(int c):parent(c)
         {
             cout<<"parameterised child class"<<endl;
-        }
+        }*/
 };
 
 int main()

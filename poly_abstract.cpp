@@ -11,7 +11,7 @@ class base
 class child1:public base
 {
     public:
-    void give()
+    void give() override
     {
         cout<<"Pink bun"<<endl;
     }
@@ -20,7 +20,7 @@ class child1:public base
 class child2:public base
 {
     public:
-    void give()
+    void give() override
     {
         cout<<"Brown bun"<<endl;
     }
