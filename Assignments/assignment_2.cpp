@@ -57,25 +57,11 @@ int height(node* node)
     return ans;
 }
 
-int diameter(node * node)
-{
-	if(node == NULL)
-	{
-		return 0;
-	}
-	int opt1 = diameter(node->left);
-	int opt2 = diameter(node->right);
-	int opt3 = height(node->left) + 1 + height(node->right);
-	int ans = max(opt1,(max(opt2,opt3)));
-	return ans;
-}
-
 int main()
 {
     node* root = NULL;
     root = create_tree(root);
-    //cout<<"depth of tree is : "<<height(root)<<endl;
-	cout<<"diameter of tree is : "<<diameter(root)<<endl;
+    cout<<"depth of tree is : "<<height(root)<<endl;
 
 
 
