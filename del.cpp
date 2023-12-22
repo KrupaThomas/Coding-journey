@@ -8,7 +8,7 @@ class Box
 	int length;
 	int height;
 	int breadth;
-	static int count = 0;
+	static inline int count = 0;
 
 	
 	public:

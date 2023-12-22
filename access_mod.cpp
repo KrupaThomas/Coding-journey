@@ -26,5 +26,6 @@ class child: public base
 
 int main()
 {
+    child der;
     return 0;
 }

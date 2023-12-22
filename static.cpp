@@ -33,7 +33,7 @@ int main()
     animal cat,dog;
     cat.nose = 6;
     dog.nose = 9;
-    dog.nose = 10;
+    //dog.nose = 10;
     cout<<"Cat nose : "<<cat.nose<<" "<<"Dog nose : "<<dog.nose<<endl; 
     cat.print();//can call the static member fn using object
     animal::print();//but preferred through class name

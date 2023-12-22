@@ -1,9 +1,3 @@
-
-// Given the root of a binary tree, return its maximum depth.
-// A binary tree's maximum depth is the number of nodes along the
-
-// longest path from the root node down to the farthest leaf node
-
 #include<iostream>
 using namespace std;
 
@@ -57,25 +51,11 @@ int height(node* node)
     return ans;
 }
 
-int diameter(node * node)
-{
-	if(node == NULL)
-	{
-		return 0;
-	}
-	int opt1 = diameter(node->left);
-	int opt2 = diameter(node->right);
-	int opt3 = height(node->left) + 1 + height(node->right);
-	int ans = max(opt1,(max(opt2,opt3)));
-	return ans;
-}
-
 int main()
 {
     node* root = NULL;
     root = create_tree(root);
     cout<<"depth of tree is : "<<height(root)<<endl;
-	cout<<"diameter of tree is : "<<diameter(root)<<endl;
 
 
 

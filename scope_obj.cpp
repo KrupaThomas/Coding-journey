@@ -38,7 +38,7 @@ int main()
 
     if(true)
     {
-        static shape rectangle;
+        static shape rectangle;//since static its lifetime is till end of program
         rectangle.sides = 4;
     }
     cout<<"End of main"<<endl;

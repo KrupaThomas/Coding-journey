@@ -55,7 +55,7 @@ class animal
 {
     public:
     int nose;
-    mutable int legs;
+    mutable int legs;//to change just one member in a const object
 
     animal()
     {

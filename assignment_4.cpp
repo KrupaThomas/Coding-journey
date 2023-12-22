@@ -74,7 +74,7 @@ int main()
 {
     node* root = NULL;
     root = create_tree(root);
-    cout<<"depth of tree is : "<<height(root)<<endl;
+    //cout<<"depth of tree is : "<<height(root)<<endl;
 	cout<<"diameter of tree is : "<<diameter(root)<<endl;
 
 
