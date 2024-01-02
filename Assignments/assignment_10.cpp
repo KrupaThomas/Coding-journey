@@ -10,7 +10,7 @@
 
 #include <iostream>
 
-// Definition for a binary tree node.
+
 struct TreeNode {
     int val;
     TreeNode* left;
@@ -23,21 +23,21 @@ public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
         if (!root) return nullptr;
 
-        // If both nodes are on the left subtree
+        
         if (p->val < root->val && q->val < root->val)
             return lowestCommonAncestor(root->left, p, q);
 
-        // If both nodes are on the right subtree
+        
         if (p->val > root->val && q->val > root->val)
             return lowestCommonAncestor(root->right, p, q);
 
-        // Otherwise, the current root is the LCA
+        
         return root;
     }
 };
 
 int main() {
-    // Example usage
+    
     TreeNode* root = new TreeNode(6);
     root->left = new TreeNode(2);
     root->right = new TreeNode(8);
