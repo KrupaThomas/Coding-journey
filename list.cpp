@@ -78,9 +78,9 @@ int main()
 
     lst.sort();
     cout<<"The sorted list : ";
-    for(list<int>::iterator i = lst.begin(); i != lst.end(); i++)
+    for(auto i : lst)
     {
-        cout<<*i<<" ";
+        cout<<i<<" ";
     }
 
     cout<<endl;

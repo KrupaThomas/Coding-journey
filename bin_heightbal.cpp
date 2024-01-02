@@ -5,18 +5,18 @@ using namespace std;
 
 class node
 {
-    public:
+    public :
     int data;
     node* left;
     node* right;
 
-    
     node(int d)
     {
         data = d;
-        left =  NULL;
+        left = NULL;
         right = NULL;
     }
+
 };
 
 node* create_tree(node* root)
@@ -24,54 +24,51 @@ node* create_tree(node* root)
     int data;
     cout<<"Enter data : ";
     cin>>data;
-    
+
     if(data == -1)
         return NULL;
-
+    
     root = new node(data);
-
-    cout<<"Enter left child data : ";
+    cout<<"Enter left child : "<<endl;
     root->left = create_tree(root->left);
-    cout<<"Enter right child data : ";
+    cout<<"Enter right child : "<<endl;
     root->right = create_tree(root->right);
 
     return root;
-    
 }
 
 int height(node* root)
 {
     if(root == NULL)
-    {
         return 0;
-    }
-
     int lh = height(root->left);
     int rh = height(root->right);
-    return max(lh,rh)+1;
+    int ans = max(lh,rh) + 1;
+    return ans;
+
+
 }
 
-int diameter(node* root)
+bool is_balanced(node *root)
 {
     if(root == NULL)
-    {
-        return 0;
-    }
+        return true;
+    
+    int lh = height(root->left);
+    int rh = height(root->right);
+    int ans = abs(lh-rh);
+    if(ans <= 1 && is_balanced(root->left) && is_balanced(root->right))
+        return true;
+    return false;
 
-    int opt1 = diameter(root->left);
-    int opt2 = diameter(root->right);
-    int opt3 = height(root->left) + height(root->right) + 1;
-    int ans = max(opt1, max(opt2, opt3));
-    return ans;
 }
-
 
 int main()
 {
     node* root = NULL;
     root = create_tree(root);
-    cout<<"height of tree is : "<<height(root)<<endl;;
-    cout<<"diameter of tree is : "<<diameter(root)<<endl;
+
+    cout<<"Tree is/is not (1/0) height balanced : "<<is_balanced(root)<<endl;
 
     return 0;
 }
