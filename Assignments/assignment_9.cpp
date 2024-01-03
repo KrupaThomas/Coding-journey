@@ -1,15 +1,5 @@
-
-// Given a binary search tree (BST), find the lowest common ancestor (LCA) 
-
-// node of two given nodes in the BST.
-// According to the definition of LCA on Wikipedia: “The lowest common 
-// ancestor is defined between two nodes p and q as the lowest node in T
-// that has both p and q as descendants (where we allow a node to be a
-// descendant of itself).”
-
-
 #include <iostream>
-
+using namespace std;
 
 struct TreeNode {
     int val;
@@ -21,41 +11,60 @@ struct TreeNode {
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-        if (!root) return nullptr;
+        if (!root) 
+            return NULL;
 
-        
-        if (p->val < root->val && q->val < root->val)
-            return lowestCommonAncestor(root->left, p, q);
+        int curr = root->val;
 
-        
-        if (p->val > root->val && q->val > root->val)
+        if (curr < p->val && curr < q->val)
             return lowestCommonAncestor(root->right, p, q);
 
-        
+        if (curr > p->val && curr > q->val)
+            return lowestCommonAncestor(root->left, p, q);
+
         return root;
     }
 };
 
-int main() {
+TreeNode* create_tree(TreeNode* root) {
+    int data;
+    cout << "Enter data (-1 to stop): ";
+    cin >> data;
+    if (data == -1) {
+        return nullptr;
+    }
+    root = new TreeNode(data);
     
-    TreeNode* root = new TreeNode(6);
-    root->left = new TreeNode(2);
-    root->right = new TreeNode(8);
-    root->left->left = new TreeNode(0);
-    root->left->right = new TreeNode(4);
-    root->right->left = new TreeNode(7);
-    root->right->right = new TreeNode(9);
-    root->left->right->left = new TreeNode(3);
-    root->left->right->right = new TreeNode(5);
+    cout << "Enter left child of " << data << " : ";
+    root->left = create_tree(root->left);
 
+    cout << "Enter right child of " << data << " : ";
+    root->right = create_tree(root->right);
+
+    return root;
+}
+
+int main() {
     Solution solution;
-    TreeNode* p = root->left;
-    TreeNode* q = root->left->right->right;
+
+    TreeNode* root = nullptr;
+    root = create_tree(root);
+
+    int data1, data2;
+    cout<<"Enter value of p (node 1)"<<endl;
+    cin>>data1;
+
+    cout<<"Enter value of q (node 2)"<<endl;
+    cin>>data2;
+
+    TreeNode* p = new TreeNode(data1); 
+    TreeNode* q = new TreeNode(data2); 
+
     TreeNode* lca = solution.lowestCommonAncestor(root, p, q);
     if (lca)
-        std::cout << "Lowest Common Ancestor: " << lca->val << std::endl;
+        cout << "Lowest Common Ancestor: " << lca->val << endl;
     else
-        std::cout << "One or both nodes not found." << std::endl;
+        cout << "One or both nodes not found." << endl;
 
     return 0;
 }
