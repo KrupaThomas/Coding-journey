@@ -1,4 +1,11 @@
+//morris traversal of binary tree
+//T - O(N)
+//S - O(1)
+
+//inorder traversal of binary tree always gives a sorted array
+
 #include<iostream>
+#include<vector>
 
 using namespace std;
 
@@ -8,21 +15,22 @@ struct TreeNode
     TreeNode *left;
     TreeNode *right;
 
-    TreeNode(int x) : val(x), left(NULL), right(NULL){};
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {};
 };
 
-int morris(TreeNode* root, int k)
+int moriss(TreeNode *root,int k)
 {
+    //vector<int> inorder;
     int count = 0;
     int kthsmallest = -1;
-    TreeNode* curr = root;
-
+    TreeNode *curr = root;
     while(curr!=NULL)
     {
         if(curr->left == NULL)
         {
+            //inorder.push_back(curr->val);
             count++;
-            if(count ==k )
+            if(count == k)
             {
                 kthsmallest = curr->val;
             }
@@ -43,17 +51,19 @@ int morris(TreeNode* root, int k)
             else
             {
                 prev->right = NULL;
+                //inorder.push_back(curr->val);
                 count++;
                 if(count == k)
                 {
                     kthsmallest = curr->val;
                 }
                 curr = curr->right;
+
             }
         }
     }
-    return kthsmallest;
-
+    
+        return kthsmallest;        
 }
 
 TreeNode* create_Tree(TreeNode *root)
@@ -66,26 +76,27 @@ TreeNode* create_Tree(TreeNode *root)
         return NULL;
 
     root = new TreeNode(data);
-
-    cout<<"Left child of "<<root->val<<" : "<<endl;
+    
+    cout<<"Enter left child of : "<<root->val<<endl;
     root->left = create_Tree(root->left);
-
-    cout<<"Right child of "<<root->val<<" : "<<endl;
+    cout<<"Enter right child of : "<<root->val<<endl;
     root->right = create_Tree(root->right);
 
     return root;
-
 }
+
+
 int main()
 {
     int k;
-    cout<<"Enter value of k : "<<endl;
+    cout<<"Enter the value of k : "<<endl;
     cin>>k;
-
-    TreeNode *root = NULL;
+    TreeNode* root = NULL;
     root = create_Tree(root);
 
-    cout<<"Kth smallest element in the BST is : "<<morris(root,k)<<endl;
+    int order = moriss(root,k);
+
+    cout<<"kth smallest element in tree is : "<<order<<endl;
 
 
 
