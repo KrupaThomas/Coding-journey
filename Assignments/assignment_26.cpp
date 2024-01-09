@@ -43,6 +43,8 @@ int main()
 
     vector<int> ans = productexceptself(nums);
 
+    cout<<"The answer array having product of all other elements in array except itself : "<<endl;
+
     for(auto i : ans)
     {
         cout<<i<<"\t";

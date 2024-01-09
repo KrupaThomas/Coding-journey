@@ -17,7 +17,7 @@ class word
     }
 
     
-    int length_pallindrome() {
+    string length_pallindrome() {
     int len = name.length();
     int max_length = 1;
     int st = 0, end = 0;
@@ -49,7 +49,8 @@ class word
 
     string longest_palin = name.substr(st, max_length);
     
-    return longest_palin.length();
+    //return longest_palin.length();
+    return longest_palin;
 }
 
 
