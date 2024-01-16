@@ -1,52 +1,59 @@
-#include<iostream>
+// C++ Program to demonstrate
+// the Virtual Function
+#include <iostream>
 using namespace std;
 
+// Declaring a Base class
+class GFG_Base {
 
-class Box
-{
-	private:
-	int length;
-	int height;
-	int breadth;
-    mutable int count;
+public:
+	// virtual function
+	virtual void display()
+	{
+		cout << "Called virtual Base Class function"
+			<< "\n\n";
+	}
 
-	
-	public:
-
-    virtual void fun1()
-    {
-        cout<<"fun1 base"<<endl;
-    }
-    void fun2()
-    {
-        cout<<"fun2 base"<<endl;
-    }
-
+	void print()
+	{
+		cout << "Called GFG_Base print function"
+			<< "\n\n";
+	}
 };
 
- class custombox : public Box
-{
-    int customlength;
-    public:
-    void fun1() override
-    {
-        cout<<"fun1 derived"<<endl;
-    }
-    void fun2()
-    {
-        cout<<"fun2 derived"<<endl;
-    }
+// Declaring a Child Class
+class GFG_Child : public GFG_Base {
 
+public:
+	void display()
+	{
+		cout << "Called GFG_Child Display Function"
+			<< "\n\n";
+	}
 
+	void print()
+	{
+		cout << "Called GFG_Child print Function"
+			<< "\n\n";
+	}
 };
 
+// Driver code
 int main()
 {
-	custombox box1;
-    //Box *bptr = new custombox;
-    Box *bptr = new Box;
-    bptr->fun1();
+	// Create a reference of class GFG_Base
+	GFG_Base* base;
+
+	GFG_Child child;
+
+	base = &child;
+
+	base->display(); //child display called as object that base pointer points to is child //virtual function
+    child.display();//function overriding example
+
+    base->print();//base print funtion as pointer of base and non virtual function
+    child.print();//child orint called
 
 
-	return 0;
+
 }
