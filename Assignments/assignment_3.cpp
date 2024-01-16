@@ -34,10 +34,6 @@ int main()
     cout<<"Enter second binary string : ";
     cin>>bin_str2;
 
-    bitset<32>bits1(bin_str1);
-    bitset<32>bits2(bin_str2);
-
-
     cout<<"the concatenated binary string is : "<<bin_sum(bin_str1,bin_str2)<<endl;
     return 0;
 }
