@@ -22,17 +22,7 @@ int main()
     }
     
 
-    if(count%2==0)
-    {
-        //cout<<"hi";
-        move(count,lst);
-        
-    }
-    else
-    {
-        //cout<<"hi";
-        move(count,lst);
-    }
+    move(count,lst);
 
     return 0;
 }
