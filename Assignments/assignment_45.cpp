@@ -37,7 +37,7 @@ int main()
 
 //Write a program to multiply two matrixes (general matrix, can be square or rectangular)
 
-/*#include<iostream>
+#include<iostream>
 using namespace std;
 
 int main()
@@ -63,9 +63,9 @@ int main()
     }
 
     cout<<"Enter the elements of matrix 2 : "<<endl;
-    for(int i = 0; i<n; i++)
+    for(int i = 0; i<p; i++)
     {
-        for(int j = 0; j<m ; j++)
+        for(int j = 0; j<q ; j++)
         {
             cin>>arr2[i][j];
         }
@@ -90,14 +90,14 @@ int main()
     cout<<"The resultant matrix is : "<<endl;
     for(int i = 0; i < n ; i++)
     {
-        for(int j = 0 ; j < m ; j++)
+        for(int j = 0 ; j < q ; j++)
         {
             cout<<arr[i][j]<<" ";
         }
         cout<<endl;
     }
     return 0;
-}*/
+}
 
 //---------------------------------------------------------------------------------------------------------------------------------------
 
@@ -195,36 +195,36 @@ int main() {
 //for arr = [2,3] , the median is (2 + 3) / 2 = 2.5
 
 
-#include<iostream>
-#include<array>
-#include<algorithm>
+// #include<iostream>
+// #include<array>
+// #include<algorithm>
 
-using namespace std;
+// using namespace std;
 
-int main()
-{
-    int arr[50],n;
-    float median;
-    cout<<"Enter size of array : "<<endl;
-    cin>>n;
+// int main()
+// {
+//     int arr[50],n;
+//     float median;
+//     cout<<"Enter size of array : "<<endl;
+//     cin>>n;
 
-    for(int i = 0 ;i < n; i++)
-    {
-        cin>>arr[i];
-    }
+//     for(int i = 0 ;i < n; i++)
+//     {
+//         cin>>arr[i];
+//     }
     
-    sort(arr,arr+n);
-    int mid = n/2;
+//     sort(arr,arr+n);
+//     int mid = n/2;
 
-    if(n % 2 == 0)
-    {
+//     if(n % 2 == 0)
+//     {
        
-        median = (float)(arr[mid]+arr[mid-1])/2;
-    }
-    else
-        median = arr[mid];
+//         median = (float)(arr[mid]+arr[mid-1])/2;
+//     }
+//     else
+//         median = arr[mid];
 
-    cout<<"Median is : "<<median<<endl;
+//     cout<<"Median is : "<<median<<endl;
 
-    return 0;
-}
+//     return 0;
+// }

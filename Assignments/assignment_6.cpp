@@ -42,12 +42,12 @@ int search(std::array<int,6>arr,int v)
         else if(v > arr[mid])
         {
             start = mid + 1;
-            continue;
+            //continue;
         }
         else
         {
             end = mid - 1;
-            continue;
+            //continue;
         }
     }
     return -1;
